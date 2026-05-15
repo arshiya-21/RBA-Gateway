@@ -19,20 +19,14 @@ def etl(json_data, last_timepour,mould_config):
     if "patterns" not in json_data:
         raise KeyError("The key 'Patterns' is missing from the JSON data.")
 
-    PATTERN_RENAME = mould_config["PATTERN_RENAME"]
+    PATTERN_LOOKUP = {k: v[0] for k, v in mould_config["PATTERN_LOOKUP"].items()}
     time_columns = mould_config["TIME_COLUMNS"]
     keep_columns = mould_config["keep_columns"]
 
     df = pd.DataFrame(json_data["moulds"])
 
-    pattern_lookup = {
-        pattern["id"]["value"]: f"{pattern['details']['ItemName']['value']}/#{pattern['details']['ItemNumber']['value']}"
-        for pattern in json_data["patterns"]
-        if "id" in pattern and "details" in pattern and "ItemName" in pattern["details"] and "ItemNumber" in pattern["details"]
-    }
-
-    df["PatternIdentification"] = df["PatternNumber"].map(pattern_lookup)
-    df["PatternIdentification"] = df["PatternIdentification"].replace(PATTERN_RENAME)
+    mask = df["PatternNumber"].astype(str).isin(PATTERN_LOOKUP)
+    df.loc[mask, "PatternIdentification"] = df.loc[mask, "PatternNumber"].astype(str).map(PATTERN_LOOKUP)
 
     for col in time_columns:
         if col in df.columns:
