@@ -1,0 +1,75 @@
+{
+    "PATTERN_RENAME": {
+        "RING/#1059999": "G2501FR-ACO-2540",
+         "COVER , LID/#(24X24),SIP-104-WNL": "SIP-104L-WNL-2411",
+         "20 EZ-GRIP MJ ADAPTER/#19EZMJA20": "DIPF254-2666",
+         "AEC CLASS K, FBR CLASS K/#F000516,F00588":"CORESHOOTERPLATE925X-2302",
+         "COVER + FRAME/#EU-D 6454C/6510 CR,6510FR":"EU-D6454C-2301",
+         "COVER & FRAME/#RBAD-1983": "RBAD-1983C-TC-N-2580",
+         "GRATE+FRM/#1483(PO-20)" :"RBAD-1483F-2296",
+         "FRAME,NJA CLASS K/#RBAD-1439,F00001":"WD-89067-S/9-2345",
+         "FRAME/#RBAD 2255" : "RBAD-2255F-2617",
+         "FRAME/#RBAD-1748" : "RBAD-1748F-1145",
+         "COVER/#RBAD 1002" : "RBAD-1002C-832",
+         "N2314 (ADV CI 3024R)/#N2314 (ADV-CI- 3024R)" : "N2314-1483",
+         " GRATE/#EU-D 6207, EU-D 6377GRATE" :"EU-D6207GR-2375",
+         "FRAME,BLIND,TAPPED FLANGE/#RBAD-1117,SIPF-003,SIP210" : "RBAD-1117F-2522",
+         "GRATE & FRAME/#RBAD- 1482H (PO-10-D400)" : "RBAD-1482HF-1082",
+         "cover/#RBAD-1439,DIPF108" : "RBAD-1439C-2322",
+         "COVER,OUTER SPACER RING/#N2310(ADV-CI-2420R)700738" : "N2310-2297",
+         "BACKING RING F, END CAP F/#F00774, F00773" : "F00774-2541",
+         "FRAME/#EU-D 6499"     : "EU-D6499F-2672",
+         "FRAME/#1002" : "RBAD-1002F-1064",
+         "GRATE+FRM/#1483(PO-20)" : "RBAD-1483F-754",
+         "GRATE & FRAME/#RBAD- 1482H (PO-10-D400)" : "RBAD-1482HF-1082",
+         "FRAME/#RBAD-1118" : "RBAD-1118F-INDAQUA-1498",
+         "COVER  & FRAME/#RBAD-1270MM,1438MM" : "RBAD-1270F-2363",
+         "COVER & FRAME/#RBAD-1269MM/1270MM/1438MM" : "RBAD-1438F-2355",
+         "COVER/#1921/1921A" : "RBAD-1921AC-1974",
+         "GRATE/#EU-D 6292GR, EU-D 6307GR" : "EU-D6292GR-2532",
+         "COVER/#211-10" : "SIP-211-10 DPR-1964",
+         "COVER , LID/#(18X24),SIP-174-LID" :"N2306-2717",
+         "CORESHOOTERPLATE925X-2302" :"F00779-2669",
+         "GRATE, FRAME/#1104" : "RBAD-1104F-1114",
+         "FRAME/#1921/DIPF-260-06" : "RBAD-1921F-1949",
+         "COVER RBAD-1118/#RBAD-1118" :"RBAD-1118C-INDAQUA-1465",
+         "COVER RBAD-1117/#RBAD-1117" : "RBAD-1117C-437",
+         "FRAME/#EU-D6456,RBAD-1893-FRA" : "EU-D6456F-2576",
+         "FRAME/#1440 H" : "RBAD-1440HF-1269",
+         "COVER  & GRATE/#RBAD-1440H,RBAD370A":"RBAD-1440HC-2422"
+         
+     
+         
+       
+     
+ 
+ 
+ 
+    },
+    
+    "keep_columns" : [
+        "MouldIndex", "MouldCounter", "SettingIndex", "MouldThickness",
+        "Compressibility", "CycleTime", "TimeProd", "TimePour", "TimeProdPLC",
+        "TimeProdDiff", "TimeShakeOut", "MouldStatus", "CoreStatus",
+        "PourStatus", "SortingStatus", "PatternNumber", "PatternIdentification","MinCycletime",
+        "PPThickness", "PPHeight", "SPThickness", "SPHeight", "MinimumDist",
+        "CoreMaskTh", "CoreHeightOut", "CoreHeightIn", "CorrMoldTh",
+        "CorrMoldPos", "CorrOp3aEnd", "ShotPressure", "ShotTimeCorr",
+        "SandLevel", "SandValvAct", "SqueezePres", "ExtSqTime", "MinCompress",
+        "MaxCompress", "DelayedSPSq", "SqueezeSpeed", "Op2A", "Op3A",
+        "PPStripAcc", "PPStripDist", "SPStripAcc", "SPStripDist", "PPStripAir",
+        "SPStripAir", "CloseUpForce", "CorrClUpPos", "ExtMoldRetTime",
+        "MoldRetPres", "CluseUpDec", "CorrMoldDelPos", "AccMoldtransport",
+        "DecMoldtransport", "CoreSetMode", "CoreRetSel", "VacWithEmptyCM",
+        "VacWithFullCM", "CSEAccS1S3", "CSECoreSettCorr", "CSECoreSetForce",
+        "CSECoreSetTime", "CSECoreStripAir", "CSECoreStripTime",
+        "CSEStripAccS6", "CSEStripDistS6", "SprayFreq", "SprayTime",
+        "SPSprayPos", "ActNozzles", "AtomizingAirPress", "PPTemp", "SPTemp",
+        "BlowSPTopOp3", "BlowOffFront4A", "BlowPPImprCSE", "OverlapOp3B4A",
+        "OverlapOp56", "OverlapOp61", "SpeedOnCams3_6", "OverlapOp36CSE",
+        "OverlapCSEOp1223", "OverlapCSEOp6778", "CIM4ProdIndex",
+        "CIM4UptimeIndex", "BatchID"
+    ],
+    
+    "TIME_COLUMNS": ["TimeProd", "TimePour", "TimeProdPLC", "TimeShakeOut"]
+}
