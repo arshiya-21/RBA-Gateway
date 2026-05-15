@@ -1,0 +1,172 @@
+{
+    "source_database": {
+        "cred":{
+            "driver": "{MySQL ODBC 8.2 ANSI Driver}",
+            "server": "localhost",
+            "database": "foundry_data",
+            "uid": "root",
+            "pwd": "S@ndm@Ndb_2020&stg"
+        },
+        "SSH":{
+            "connection":false,
+            "cred" :{
+                "remote_host":"127.0.0.1",
+                "remote_port" :3306,
+                "local_port":6010,
+                "ssh_host" : "128.199.231.118",
+                "ssh_port" : 22,
+                "ssh_key_path" :"/home/mpminfosoft/Desktop/project/connect_via_ssh/keys/smstg-24jun21.pem"
+            }
+
+        },
+        "table_name" : "testing_foundry_table",
+        "filter_id" : "Datetime",
+        "file_keyword": "",
+        "schema" : {
+            "id" : "INT AUTO_INCREMENT PRIMARY KEY",
+            "column1" : "varchar(255)",
+            "column2" : "decimal(10,2)",
+            "column3" : "tinyint(1)",
+            "column4" : "date",
+            "timestamp_column" : "TIMESTAMP"
+        },
+        "columns_needed": [
+            "id","column1" ,"column2" ,"column3" ,"column4" ,"timestamp_column"
+        ]
+    },
+
+    "scrapping":{
+        "scrapping_urls":{
+            "login":"http://172.16.0.41/cim/api/account/guestlogon",
+            "data":"http://172.16.0.41/cim/api/mould/prodline/historic?sn=190009"}
+        },
+    "destination_database": {
+        "cred":{
+            "driver": "{MySQL ODBC 8.2 ANSI Driver}",
+            "server": "localhost",
+            "database": "Local_database",
+            "uid": "root",
+            "pwd": "root",
+            "port":3306
+        },
+        "SSH":{
+            "connection":false,
+            "cred" :{
+                "remote_host":"127.0.0.1",
+                "remote_port" :3306,
+                "local_port":6010,
+                "ssh_host" : "128.199.231.118",
+                "ssh_port" : 22,
+                "ssh_key_path" :"/home/mpminfosoft/Desktop/project/connect_via_ssh/keys/smstg-24jun21.pem"
+            }
+
+        },
+        "table_name": "moulding_machine_historic_data",
+        "schema": {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+            "ID": "INT AUTO_INCREMENT PRIMARY KEY",
+            "MouldIndex": "INT",
+            "MouldCounter": "INT",
+            "SettingIndex": "INT",
+            "MouldThickness": "FLOAT",
+            "Compressibility": "FLOAT",
+            "CycleTime": "FLOAT",
+            "TimeProd": "DATETIME",
+            "TimePour": "VARCHAR(255)",
+            "TimeProdPLC": "VARCHAR(255)",
+            "TimeProdDiff": "INT",
+            "TimeShakeOut": "VARCHAR(255)",
+            "MouldStatus": "INT",
+            "CoreStatus": "INT",
+            "PourStatus": "INT",
+            "SortingStatus": "FLOAT",
+            "PatternNumber": "INT",
+            "PatternIdentification": "VARCHAR(255)", 
+            "MinCycletime": "FLOAT",
+            "PPThickness": "FLOAT",
+            "PPHeight": "FLOAT",
+            "SPThickness": "FLOAT",
+            "SPHeight": "FLOAT",
+            "MinimumDist": "FLOAT",
+            "CoreMaskTh": "FLOAT",
+            "CoreHeightOut": "FLOAT",
+            "CoreHeightIn": "FLOAT",
+            "CorrMoldTh": "FLOAT",
+            "CorrMoldPos": "FLOAT",
+            "CorrOp3aEnd": "FLOAT",
+            "ShotPressure": "FLOAT",
+            "ShotTimeCorr": "FLOAT",
+            "SandLevel": "FLOAT",
+            "SandValvAct": "INT",
+            "SqueezePres": "FLOAT",
+            "ExtSqTime": "FLOAT",
+            "MinCompress": "FLOAT",
+            "MaxCompress": "FLOAT",
+            "DelayedSPSq": "FLOAT",
+            "SqueezeSpeed": "FLOAT",
+            "Op2A": "INT",
+            "Op3A": "INT",
+            "PPStripAcc": "FLOAT",
+            "PPStripDist": "FLOAT",
+            "SPStripAcc": "FLOAT",
+            "SPStripDist": "FLOAT",
+            "PPStripAir": "FLOAT",
+            "SPStripAir": "FLOAT",
+            "CloseUpForce": "FLOAT",
+            "CorrClUpPos": "FLOAT",
+            "ExtMoldRetTime": "FLOAT",
+            "MoldRetPres": "FLOAT",
+            "CluseUpDec": "FLOAT",
+            "CorrMoldDelPos": "FLOAT",
+            "AccMoldtransport": "FLOAT",
+            "DecMoldtransport": "FLOAT",
+            "CoreSetMode": "INT",
+            "CoreRetSel": "INT",
+            "VacWithEmptyCM": "FLOAT",
+            "VacWithFullCM": "FLOAT",
+            "CSEAccS1S3": "FLOAT",
+            "CSECoreSettCorr": "FLOAT",
+            "CSECoreSetForce": "FLOAT",
+            "CSECoreSetTime": "FLOAT",
+            "CSECoreStripAir": "INT",
+            "CSECoreStripTime": "FLOAT",
+            "CSEStripAccS6": "FLOAT",
+            "CSEStripDistS6": "FLOAT",
+            "SprayFreq": "INT",
+            "SprayTime": "FLOAT",
+            "SPSprayPos": "FLOAT",
+            "ActNozzles": "INT",
+            "AtomizingAirPress": "FLOAT",
+            "PPTemp": "FLOAT",
+            "SPTemp": "FLOAT",
+            "BlowSPTopOp3": "INT",
+            "BlowOffFront4A": "INT",
+            "BlowPPImprCSE": "INT",
+            "OverlapOp3B4A": "INT",
+            "OverlapOp56": "INT",
+            "OverlapOp61": "INT",
+            "SpeedOnCams3_6": "INT",
+            "OverlapOp36CSE": "INT",
+            "OverlapCSEOp1223": "INT",
+            "OverlapCSEOp6778": "INT",
+            "CIM4ProdIndex": "INT",
+            "CIM4UptimeIndex": "INT",
+            "BatchID": "INT"
+            },
+        "filter_id": "MouldIndex"
+    },
+    
+    "id_logger_sandman_table": {
+        "name": "moulding_historic_data_id_logger",
+        "schema": {
+            "id": "INT AUTO_INCREMENT PRIMARY KEY",
+            "last_id": "INT",
+            "processed_time": "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+        },
+        "fetch_id": "last_id"
+    },
+
+    "etl" : false,
+    "etl_file_path" : "",
+    "log_file_path" : "/home/manoj/Desktop/MPM_GATEWAY/RBA_mould_history_data/logs",
+    "data_freq(in secs)" : 60
+}

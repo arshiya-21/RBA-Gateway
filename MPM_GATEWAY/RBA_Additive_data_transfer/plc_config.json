@@ -1,0 +1,67 @@
+{
+    "PLC":{
+        "cred":{
+            "ip":"172.16.0.42",
+            "slot":1,
+            "rack":0
+        },
+        "write_data" : false,
+        "address_access":{
+            "read":[
+                {"content": "Gravimetric_Mode_Selected","byte": 0,"bit": 0,"storage": "DB","type": "bool","size": 1,"DB_no": 11},
+                {"content": "Water_Dosing_Sec_Mode","byte": 0,"bit": 1,"storage": "DB","type": "bool","size": 1,"DB_no": 11},
+                
+                {"content": "Return_Sand_Set_Kgs","address": 2,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                {"content": "Return_Sand_Act_Kgs","address": 26,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                
+                {"content": "New_Sand_Set_kgs","address": 6,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                {"content": "New_Sand_Act_Kgs","address": 30,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                
+                {"content": "Bentonite_Set_Kgs","address": 10,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                {"content": "Bentonite_Act_Kgs","address": 34,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                
+                {"content": "Coal_Dust_Set_Kgs","address": 14,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                {"content": "Coal_Dust_Act_Kgs","address": 38,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                
+                {"content": "Fine_Dust_Set_Kgs","address": 18,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                {"content": "Fine_Dust_Act_Kgs","address": 42,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                
+                {"content": "Water_Dosing_Set_Litre","address": 22,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+                {"content": "Water_Dosing_Act_Litre","address": 46,"storage": "DB","type": "real","size": 4,"DB_no": 11}
+                  
+            ]
+        },
+        "data_reading_freq(in secs)" : 120
+    },
+    "Database":{
+        "cred":{
+            "driver": "{MySQL ODBC 8.2 ANSI Driver}",
+            "server": "localhost",
+            "database": "Local_database",
+            "uid": "root",
+            "pwd": "root",
+            "port":3306
+        },
+        "table_name": "additive_data_v2",
+        "schema": {
+        "id": "int NOT NULL AUTO_INCREMENT PRIMARY KEY",
+        "datetime" :"TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP(6)",
+        "Gravimetric_Mode_Selected": "Boolean DEFAULT NULL",
+        "Water_Dosing_Sec_Mode": "Boolean DEFAULT NULL",
+        "Return_Sand_Set_Kgs": "double DEFAULT NULL",
+        "Return_Sand_Act_Kgs": "double DEFAULT NULL",
+        "New_Sand_Set_kgs": "double DEFAULT NULL",
+        "New_Sand_Act_Kgs": "double DEFAULT NULL",
+        "Bentonite_Set_Kgs": "double DEFAULT NULL",
+        "Bentonite_Act_Kgs": "double DEFAULT NULL",
+        "Coal_Dust_Set_Kgs": "double DEFAULT NULL",
+        "Coal_Dust_Act_Kgs": "double DEFAULT NULL",
+        "Fine_Dust_Set_Kgs": "double DEFAULT NULL",
+        "Fine_Dust_Act_Kgs": "double DEFAULT NULL",
+        "Water_Dosing_Set_Litre": "double DEFAULT NULL",
+        "Water_Dosing_Act_Litre": "double DEFAULT NULL"
+        }
+
+    },
+    "log_path" : "/home/manoj/Desktop/MPM_GATEWAY/RBA_Additive_data_transfer/logs"
+}

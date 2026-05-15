@@ -1,0 +1,103 @@
+{
+    "source_database": {
+        "cred":{
+            "driver": "{MySQL ODBC 9.0 ANSI Driver}",
+            "server": "localhost",
+            "database": "PLC_DATA",
+            "uid": "root",
+            "pwd": "root"
+        },
+        "table_name" : "scada_data",
+        "filter_id" : "id",
+        "file_keyword": "",
+        "schema": {
+            "id" :"int NOT NULL AUTO_INCREMENT PRIMARY KEY",
+            "datetime" :"TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP(6)",
+            "Bentonite_actual_value" : "double default null",
+            "Bentonite_set_value": "double default null",
+            "Fines_actual_value": "double default null",
+
+            "Fines_set_value": "double default null",
+            "coal_dust_actual_value": "double default null",
+            "coal_dust_set_value": "double default null",
+            "new_sand_weight": "double default null",
+            "return_sand_capacity_actual": "double default null",
+            "return_sand_capacity_set": "double default null",
+            "set_compactibility_actual_value" :"double default null",
+            "actual_compactibility_set_value": "double default null",
+            "last_compactibility_set_value": "double default null"  
+        },
+        "columns_needed": [
+            "id" ,
+            "datetime",
+            "Bentonite_actual_value" ,
+            "Bentonite_set_value",
+            "Fines_actual_value",
+            "Fines_set_value",
+            "coal_dust_actual_value",
+            "coal_dust_set_value",
+            "new_sand_weight",
+            "return_sand_capacity_actual",
+            "return_sand_capacity_set",
+            "set_compactibility_actual_value",
+            "actual_compactibility_set_value",
+            "last_compactibility_set_value"  
+   ] },
+
+    "destination_database": {
+        "cred":{
+            "driver": "{MySQL ODBC 9.0 ANSI Driver}",
+            "server": "localhost",
+            "database": "mcie_line2",
+            "uid": "root",
+            "pwd": "S@ndm@Ndb_2020&stg",
+            "port":6010
+        },
+        "SSH":{
+            "connection":true,
+            "cred" :{
+                "remote_host":"127.0.0.1",
+                "remote_port" :3306,
+                "local_port":6010,
+                "ssh_host" : "128.199.231.118",
+                "ssh_port" : 22,
+                "ssh_key_path" :"C:\\Users\\Administrator\\Desktop\\local_to_etlserver(deployment in gateway)\\mpmgateway\\helper\\ssh_keys\\smstg-24jun21.pem"
+            }},
+        "table_name": "scada_data",
+        "schema": {
+            "id" :"int default null",
+            "datetime" :"TIMESTAMP",
+            "Bentonite_actual_value" : "double default null",
+            "Bentonite_set_value": "double default null",
+            "Fines_actual_value": "double default null",
+            "Fines_set_value": "double default null",
+            "coal_dust_actual_value": "double default null",
+            "coal_dust_set_value": "double default null",
+            "new_sand_weight": "double default null",
+            "return_sand_capacity_actual": "double default null",
+            "return_sand_capacity_set": "double default null",
+            "set_compactibility_actual_value" :"double default null",
+            "actual_compactibility_set_value": "double default null",
+            "last_compactibility_set_value": "double default null"  
+        },
+        "filter_id" : "id"
+    },
+
+    "id_logger_sandman_table": {
+        "name": "foundry_db_id_logger",
+        "schema": {
+            "id" : "INT AUTO_INCREMENT PRIMARY KEY",
+            "last_id": "int NOT NULL",
+            "processed_time" : "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+        },
+        "fetch_id" : "last_id"
+    },
+
+    "etl" : false,
+    "etl_file_path" : "",
+    "log_file_path" : "C:\\Users\\Administrator\\Desktop\\local_to_etlserver(deployment in gateway)\\Scada_plc_data_transfer\\logs",
+    "data_freq(in secs)" : 180
+}
+
+
+

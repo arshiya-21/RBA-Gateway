@@ -1,0 +1,93 @@
+{
+    "source_database": {
+        "cred":{
+            "driver": "{MySQL ODBC 8.2 ANSI Driver}",
+            "server": "localhost",
+            "database": "foundry_data",
+            "uid": "root",
+            "pwd": "S@ndm@Ndb_2020&stg"
+        },
+        "SSH":{
+            "connection":false,
+            "cred" :{
+                "remote_host":"127.0.0.1",
+                "remote_port" :3306,
+                "local_port":6010,
+                "ssh_host" : "128.199.231.118",
+                "ssh_port" : 22,
+                "ssh_key_path" :"/home/mpminfosoft/Desktop/project/connect_via_ssh/keys/smstg-24jun21.pem"
+            }
+
+        },
+        "table_name" : "testing_foundry_table",
+        "filter_id" : "Datetime",
+        "file_keyword": "",
+        "schema" : {
+            "id" : "INT AUTO_INCREMENT PRIMARY KEY",
+            "column1" : "varchar(255)",
+            "column2" : "decimal(10,2)",
+            "column3" : "tinyint(1)",
+            "column4" : "date",
+            "timestamp_column" : "TIMESTAMP"
+        },
+        "columns_needed": [
+            "id","column1" ,"column2" ,"column3" ,"column4" ,"timestamp_column"
+        ]
+    },
+
+    "scrapping":{
+        "scrapping_urls":{
+            "login":"http://sandtesting.org/datalog/login.php",
+            "data":"http://sandtesting.org/datalog/machine_logreadings.php?mid=246"},
+        "cred":{
+            "user":"RBA",
+            "password":"Rba123"
+        }},
+    "destination_database": {
+        "cred":{
+            "driver": "{MySQL ODBC 8.2 ANSI Driver}",
+            "server": "localhost",
+            "database": "Local_database",
+            "uid": "root",
+            "pwd": "root",
+            "port":3306
+        },
+        "SSH":{
+            "connection":false,
+            "cred" :{
+                "remote_host":"127.0.0.1",
+                "remote_port" :3306,
+                "local_port":6010,
+                "ssh_host" : "128.199.231.118",
+                "ssh_port" : 22,
+                "ssh_key_path" :"/home/mpminfosoft/Desktop/project/connect_via_ssh/keys/smstg-24jun21.pem"
+            }
+
+        },
+        "table_name": "wet_tensile_labdata",
+        "schema": {
+            "ID": "INT AUTO_INCREMENT PRIMARY KEY",
+            "CycleNo": "INT",
+            "Datetime": "DATETIME",
+            "Mode": "VARCHAR(255)",
+            "Value": "FLOAT",
+            "Unit": "VARCHAR(50)"
+        },
+        "filter_id" : "Datetime"
+    },
+
+    "id_logger_sandman_table": {
+        "name": "wet_tensile_labdata_id_logger",
+        "schema": {
+            "id" : "INT AUTO_INCREMENT PRIMARY KEY",
+            "last_id": "TIMESTAMP",
+            "processed_time" : "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+        },
+        "fetch_id" : "last_id"
+    },
+
+    "etl" : false,
+    "etl_file_path" : "",
+    "log_file_path" : "/home/manoj/Desktop/MPM_GATEWAY/RBA_lab_wts_ws_data_transfer/logs",
+    "data_freq(in secs)" : 60
+}

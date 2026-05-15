@@ -1,0 +1,62 @@
+{
+    "PLC":{
+        "cred":{
+            "driver":"slc",
+            "ip":"192.168.0.20",
+            "slot":1,
+            "port":44818
+        },
+        "write_data" : false,
+        "address_access":{
+            "read":[
+                {"content": "MOISTURE_SENSOR_SAM6 Mixer", "address": "F8:12"},
+                {"content": "TEMPERATURE_SENSOR_SAM6 Mixer", "address": "F8:22"},
+                {"content": "MOISTURE_SENSOR_china_mixer", "address": "F8:40"},
+                {"content": "TEMPERATURE_SENSOR_china_mixer", "address": "F8:24"},
+                {"content": "TEMPERATURE_SENSOR_1_Reserved_hopper", "address": "F8:26"},
+                {"content": "TEMPERATURE_SENSOR_2_Reserved_hopper", "address": "F8:28"},
+                {"content": "TEMPERATURE_SENSOR_3_Reserved_hopper", "address": "F8:30"},
+                {"content": "HUMIDITY_shakeout", "address": "F8:0"},
+                {"content": "TEMPERATURE_shakeout", "address": "F8:2"}            
+            ],
+            "write":[
+                {"content": "WEIGHT OF CASTING", "address": "F8:8", "value_to_write": 987},
+                {"content": "CONTENT OF INOCULANT", "address": "F8:0", "value_to_write": 123},
+                {"content": "POURING TIME", "address": "F8:2", "value_to_write": 456},
+                {"content": "SPECIFIC GRAVITY", "address": "F8:4", "value_to_write": 789}
+            ]
+        },
+        "data_reading_freq(in secs)" : 180
+},
+"counter":{
+    "deploy":false,
+    "name":"",
+    "address": ""
+
+},
+    "Database":{
+        "cred":{
+            "driver": "{MySQL ODBC 8.2 ANSI Driver}",
+            "server": "localhost",
+            "database": "Local_database",
+            "uid": "root",
+            "pwd": "root",
+            "port":3306
+        },
+        "table_name": "plc_data2",
+        "schema": {
+            "id" :"int NOT NULL AUTO_INCREMENT PRIMARY KEY",
+            "datetime" :"TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP(6)",
+            "MOISTURE_SENSOR_SAM6 Mixer" : "double default null",
+            "TEMPERATURE_SENSOR_SAM6 Mixer" : "double default null",
+            "MOISTURE_SENSOR_china_mixer" : "double default null",
+            "TEMPERATURE_SENSOR_china_mixer" : "double default null",
+            "TEMPERATURE_SENSOR_1_Reserved_hopper" : "double default null",
+            "TEMPERATURE_SENSOR_2_Reserved_hopper" : "double default null",
+            "TEMPERATURE_SENSOR_3_Reserved_hopper" : "double default null",
+            "HUMIDITY_shakeout" : "double default null",
+            "TEMPERATURE_shakeout" : "double default null"
+        }
+    },
+    "log_path" : "/home/manoj/Desktop/MPM_GATEWAY/RBA_scada_plc_data_transfer/logs"
+}

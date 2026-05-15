@@ -1,0 +1,65 @@
+{
+    "PLC":{
+        "cred":{
+            "ip":"192.168.0.1",
+            "slot":2,
+            "rack":0
+        },
+        "write_data" : false,
+        "address_access":{
+            "read":[
+                {"content": "Bentonite_actual_value", "address": 8,"storage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "Bentonite_set_value", "address": 6,"storage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "Fines_actual_value", "address": 12,"storage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "Fines_set_value", "address": 10,"storage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "coal_dust_actual_value", "address": 16,"storage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "coal_dust_set_value", "address": 14,"storage":"DB","type":"int","size":2,"DB_no":8},                
+                {"content": "new_sand_weight", "address": 18,"storage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "return_sand_capacity_actual", "address": 4,"storanage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "return_sand_capacity_set", "address": 2,"storage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "set_compactibility_actual_value", "address": 30,"storage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "actual_compactibility_set_value", "address": 34,"storage":"DB","type":"int","size":2,"DB_no":8},
+                {"content": "last_compactibility_set_value", "address": 38,"storage":"DB","type":"int","size":2,"DB_no":8}
+
+            ],
+            "write":[
+                {"content": "", "address": "", "value_to_write": 0}
+            ]
+        },
+        "data_reading_freq(in secs)" : 180
+},
+    "counter":{
+        "deploy":false,
+        "name":"",
+        "address": ""
+
+    },
+    "Database":{
+        "cred":{
+            "driver": "{MySQL ODBC 9.0 ANSI Driver}",
+            "server": "localhost",
+            "database": "PLC_DATA",
+            "uid": "root",
+            "pwd": "root",
+            "port":3306
+        },
+        "table_name": "scada_data",
+        "schema": {
+            "id" :"int NOT NULL AUTO_INCREMENT PRIMARY KEY",
+            "datetime" :"TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP(6)",
+            "Bentonite_actual_value" : "double default null",
+            "Bentonite_set_value": "double default null",
+            "Fines_actual_value": "double default null",
+            "Fines_set_value": "double default null",
+            "coal_dust_actual_value": "double default null",
+            "coal_dust_set_value": "double default null",
+            "new_sand_weight": "double default null",
+            "return_sand_capacity_actual": "double default null",
+            "return_sand_capacity_set": "double default null",
+            "set_compactibility_actual_value" :"double default null",
+            "actual_compactibility_set_value": "double default null",
+            "last_compactibility_set_value": "double default null"  
+        }
+    },
+    "log_path" : "C:\\Users\\Administrator\\Desktop\\local_to_etlserver(deployment in gateway)\\Scada_plc_data_transfer\\logs"
+}

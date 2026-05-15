@@ -1,0 +1,57 @@
+{
+    "read": [
+
+        {"content": "Gravimetric_Mode_Selected","byte": 0,"bit": 0,"storage": "DB","type": "bool","size": 1,"DB_no": 11},
+        {"content": "Water_Dosing_Sec_Mode","byte": 0,"bit": 1,"storage": "DB","type": "bool","size": 1,"DB_no": 11},
+        
+        {"content": "Return_Sand_Set_Kgs","address": 2,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        {"content": "Return_Sand_Act_Kgs","address": 26,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        
+        {"content": "New_Sand_Set_kgs","address": 6,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        {"content": "New_Sand_Act_Kgs","address": 30,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        
+        {"content": "Bentonite_Set_Kgs","address": 10,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        {"content": "Bentonite_Act_Kgs","address": 34,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        
+        {"content": "Coal_Dust_Set_Kgs","address": 14,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        {"content": "Coal_Dust_Act_Kgs","address": 38,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        
+        {"content": "Fine_Dust_Set_Kgs","address": 18,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        {"content": "Fine_Dust_Act_Kgs","address": 42,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        
+        {"content": "Water_Dosing_Set_Litre","address": 22,"storage": "DB","type": "real","size": 4,"DB_no": 11},
+        {"content": "Water_Dosing_Act_Litre","address": 46,"storage": "DB","type": "real","size": 4,"DB_no": 11}
+         ,
+         
+        {"content": "Volumetric_Mode_Selected","byte": 0,"bit": 0,"storage": "DB","type": "bool","size": 1,"DB_no": 10},
+        
+        {"content": "Return_Sand_Set_Sec", "address": 2, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "Return_Sand_Act_Sec", "address": 42, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+      
+        {"content": "New_Sand_Set_Sec", "address": 6, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "New_Sand_Act_Sec", "address": 46, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+      
+        {"content": "Bentonite_Set_Sec", "address": 10, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "Bentonite_Act_Sec", "address": 50, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+      
+        {"content": "Coal_Dust_Set_Sec", "address": 14, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "Coal_Dust_Act_Sec", "address": 54, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+      
+        {"content": "Fine_Dust_Set_Sec", "address": 18, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "Fine_Dust_Act_Sec", "address": 58, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+      
+        {"content": "Water_Dosing_Set_Sec", "address": 22, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "Water_Dosing_Act_Sec", "address": 62, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+      
+        {"content": "Mixing_Cycle_Set_Sec", "address": 26, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "Mixing_Cycle_Act_Sec", "address": 66, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+      
+        {"content": "Dry_Mixing_Set_Sec", "address": 30, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "Dry_Mixing_Act_Sec", "address": 70, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+      
+        {"content": "Mixer_Discharge_Set_Time", "address": 34, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "Mixer_Discharge_Act_Time", "address": 74, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+      
+        {"content": "Wet_Mixing_Time_Set", "address": 38, "storage": "DB", "type": "real", "size": 4, "DB_no": 10},
+        {"content": "Wet_Mixing_Act_Set", "address": 78, "storage": "DB", "type": "real", "size": 4, "DB_no": 10}      ]
+}

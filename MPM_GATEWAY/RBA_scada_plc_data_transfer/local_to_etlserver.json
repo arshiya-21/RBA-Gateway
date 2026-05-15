@@ -1,0 +1,68 @@
+{
+    "source_database": {
+        "cred":{
+            "driver": "{MySQL ODBC 8.2 ANSI Driver}",
+            "server": "localhost",
+            "database": "Local database",
+            "uid": "testuser01",
+            "pwd": "Pass@123"
+        },
+        "table_name" : "casting_details_synthetic_data",
+        "filter_id" : "datetime",
+        "file_keyword": "",
+        "schema": {
+            "id" :"int NOT NULL AUTO_INCREMENT PRIMARY KEY",
+            "datetime" :"TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP(6)",
+            "WEIGHT OF CASTING" : "double default null",
+            "CONTENT OF INOCULANT": "double default null",
+            "POURING TIME": "double default null",
+            "SPECIFIC GRAVITY": "double default null",
+            "WEIGHT OF INOCULATION": "double default null",
+            "FLOW OF INOCULANT": "double default null",
+            "NUMBER OF DOSING": "double default null"
+        },
+        "columns_needed": [
+            "id","datetime" ,"WEIGHT OF CASTING" ,"CONTENT OF INOCULANT" ,"POURING TIME" ,"SPECIFIC GRAVITY","WEIGHT OF INOCULATION","FLOW OF INOCULANT","NUMBER OF DOSING"
+        ]
+    },
+
+    "destination_database": {
+        "cred":{
+            "driver": "{MySQL ODBC 8.2 ANSI Driver}",
+            "server": "localhost",
+            "database": "ETL server",
+            "uid": "testuser01",
+            "pwd": "Pass@123",
+            "port":3306
+        },
+        "table_name": "casting_details_replicate",
+        "schema": {
+            "id" :"int NOT NULL AUTO_INCREMENT PRIMARY KEY",
+            "datetime" :"TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP(6)",
+            "WEIGHT OF CASTING" : "double default null",
+            "CONTENT OF INOCULANT": "double default null",
+            "POURING TIME": "double default null",
+            "SPECIFIC GRAVITY": "double default null",
+            "WEIGHT OF INOCULATION": "double default null",
+            "FLOW OF INOCULANT": "double default null",
+            "NUMBER OF DOSING": "double default null"
+        },
+        "filter_id" : "datetime"
+    },
+
+    "id_logger_sandman_table": {
+        "name": "replicate_db_id_logger",
+        "schema": {
+            "id" : "INT AUTO_INCREMENT PRIMARY KEY",
+            "last_id": "Date default not null",
+            "processed_time" : "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+        },
+        "fetch_id" : "last_id"
+    },
+
+    "etl" : false,
+    "etl_file_path" : "",
+    "log_file_path" : "/home/mpminfosoft/Desktop/project/gateway/development/codebase_v2/local_to_etlserver(deployment in gateway)/test_plc_data_transfer/logs",
+    "data_freq(in secs)" : 60
+}
+

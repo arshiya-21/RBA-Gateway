@@ -1,0 +1,39 @@
+import requests
+import pandas as pd
+
+# Base URL template
+url_template = "http://172.16.0.41/cim/api/pattern?sn=190009&id={id}&module=cim-8&lang=en-GB"
+
+# List to hold extracted patterns
+data = []
+
+# Loop through pattern IDs from 1 to 153
+for pattern_id in range(1, 154):
+    url = url_template.format(id=pattern_id)
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        pattern = response.json()
+
+        # Extract item name and number values
+        item_name = pattern['details']['ItemName']['value']
+        item_number = pattern['details']['ItemNumber']['value']
+
+        # Construct the value as required
+        formatted_value = f"{item_name}/#{item_number}"
+
+        # Append to data list
+        data.append({
+            "id": pattern_id,
+            "ItemName": item_name,
+            "ItemNumber": item_number,
+            "Value": formatted_value
+        })
+
+    except Exception as e:
+        print(f"Failed to fetch ID {pattern_id}: {e}")
+
+# Save to Excel
+df = pd.DataFrame(data)
+df.to_excel("/home/manoj/Desktop/MPM_GATEWAY/RBA_mould_history_data/pattern_data.xlsx", index=False)
+print("Data saved to pattern_data.xlsx")
